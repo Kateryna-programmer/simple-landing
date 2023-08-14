@@ -1,0 +1,43 @@
+.js {
+  @extend %section;
+  @extend %section-flex-common;
+  background-color: $color-blue-5;
+  background-image: url(../img/js.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+
+  &__overlay {
+    @include abs-position;
+    background: linear-gradient(
+      135deg,
+      rgba($color-blue-2, 0.5) 0%,
+      rgba(darken($color-blue-5, 7%), 0.85) 30%,
+      rgba(darken($color-blue-5, 20%), 0.9) 100%
+    );
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    @extend %section-title;
+  }
+
+  &__subtitle {
+    @include section-subtitle;
+  }
+
+  &__flex {
+    @extend %section-flex;
+
+    &_description {
+      @extend %section-description;
+    }
+
+    &_logo img {
+      @extend %section-logo;
+    }
+  }
+}

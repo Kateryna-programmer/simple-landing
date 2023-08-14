@@ -1,0 +1,42 @@
+.css {
+  @extend %section;
+  @extend %section-flex-common;
+  background-color: $color-orange-2;
+  background-image: url(../img/css3.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+
+  &__overlay {
+    @include abs-position;
+    background: linear-gradient(
+      135deg,
+      rgba($color-orange-2, 0.9) 0%,
+      rgba($color-white, 0.9) 70%
+    );
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    color: $color-blue-5;
+  }
+
+  &__title {
+    @extend %section-title;
+  }
+
+  &__subtitle {
+    @include section-subtitle($color-blue-5);
+  }
+
+  &__flex {
+    @extend %section-flex;
+
+    &_description {
+      @extend %section-description;
+    }
+    &_logo img {
+      @extend %section-logo;
+    }
+  }
+}

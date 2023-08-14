@@ -1,0 +1,24 @@
+.footer {
+  color: $color-blue-2;
+  background-color: $color-blue-5;
+
+  &__copy {
+    text-align: center;
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    @include unlist;
+    font-size: 2rem;
+    margin-bottom: $gap;
+    gap: $gap;
+  }
+
+  &__link {
+    color: inherit;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+}

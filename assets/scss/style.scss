@@ -1,0 +1,14 @@
+@import 'normalize';
+
+@import 'presets/skins';
+@import 'presets/variables';
+@import 'extends';
+@import 'mixins';
+
+@import 'common';
+@import 'sections/header.scss';
+@import 'sections/html.scss';
+@import 'sections/css.scss';
+@import 'sections/js.scss';
+@import 'sections/frontend.scss';
+@import 'sections/footer.scss';

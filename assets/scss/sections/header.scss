@@ -1,0 +1,97 @@
+.header {
+  background-color: $color-blue-5;
+  background-image: url(../img/potential.jpg);
+  background-position: 50% 80%;
+  background-size: cover;
+
+  @extend %section;
+
+  &__overlay {
+    @include abs-position;
+    z-index: 1;
+    opacity: 0.4;
+
+    &::before {
+      content: '';
+      @include abs-position;
+      background-color: $color-primary-1;
+      clip-path: polygon(100% 20%, 100% 20%, 100% 80%, 0% 100%);
+    }
+    &_design {
+      &::before {
+        content: '';
+        @include abs-position;
+        background-color: $color-blue-5;
+        clip-path: polygon(0 0, 100% 0, 100% 20%, 0% 100%);
+      }
+      &::after {
+        content: '';
+        @include abs-position;
+        background-color: $color-blue-5;
+        clip-path: polygon(100% 80%, 0% 100%, 100% 100%);
+      }
+    }
+  }
+  &__title {
+    position: absolute;
+    top: 7%;
+    left: 7%;
+    width: 100%;
+    margin: 0;
+    font-size: 7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    span {
+      display: block;
+      &:nth-of-type(1) {
+        font-weight: 100;
+      }
+      &:nth-of-type(2) {
+        font-weight: 100;
+      }
+      &:nth-of-type(3) {
+        position: relative;
+        font-size: 10rem;
+        font-weight: 900;
+      }
+    }
+  }
+  &__navbar {
+    position: fixed;
+    z-index: 100;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    &_list {
+      @include unlist;
+    }
+
+    &_item {
+      &.active {
+        a {
+          background-color: $color-primary-4;
+        }
+      }
+    }
+
+    &_link {
+      display: block;
+      padding: 0.5em 1em;
+      text-align: center;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 100;
+      opacity: 0.5;
+      color: $color-white;
+      background-color: rgba($color-blue-2, 0.25);
+      font-size: 1.5rem;
+      transition: background-color 1s;
+
+      &:hover {
+        opacity: 1;
+        background-color: rgba($color-blue-2, 0.5);
+      }
+    }
+  }
+}
