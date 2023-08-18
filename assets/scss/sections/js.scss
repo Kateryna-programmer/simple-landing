@@ -31,13 +31,11 @@
 
   &__flex {
     @extend %section-flex;
-
-    &_description {
-      @extend %section-description;
-    }
-
-    &_logo img {
-      @extend %section-logo;
-    }
+  }
+  &__flex-logo img {
+    @extend %section-logo;
+  }
+  &__flex-description {
+    @extend %section-description;
   }
 }
